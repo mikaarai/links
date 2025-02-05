@@ -3,8 +3,8 @@
 	--gutter-size: calc(3 * var(--base-size));
 
 	--color--primary: black;
-	--color--secondary: gold;
-	--color-background: tomato;
+	--padding-left: 5%;
+	/* --color--secondary: gold; */
 
 	font-size: var(--base-size);
 
@@ -18,7 +18,21 @@ header {
 	background-color: var(--color-background);
 	padding-block: calc(5*var(--base-size));
 	margin-inline: var(--gutter-sizer);
+	padding-left: 2%;
 	}
+
+h1 {
+	font-size: 5rem;
+	font-weight: 800;
+	font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+h2 {
+	font-size: 1rem;
+	max-width: 150vh;
+	padding-top: 1rem;
+	line-height: 150%;
+}
 
 footer {
 	padding-top: var(--base-size);
@@ -46,4 +60,20 @@ section {
 	height: 33vh;
 	object-fit: cover;
 	overflow: hidden;
+	}
+
+	.grid-container {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 20px;
+		padding: 20px;
+	}
+	
+	.img {
+		background-color: #f0f0f0;
+		border: 1px solid #eaeaea;
+		text-align: center;
+		width: 100%;
+		height: 50%;
+		object-fit: cover;
 	}
