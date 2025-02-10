@@ -8,6 +8,15 @@ body {
 	padding: var(--spacing);
 }
 
+#channel-title {
+	font-family: 'Courier New', Courier, monospace;
+	font-size: 1rem;
+}
+
+#channel-blocks {
+	
+}
+
 body, header, section, ul, li, footer, address {
 	display: grid;
 	gap: var(--spacing);
