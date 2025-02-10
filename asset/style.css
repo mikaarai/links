@@ -1,30 +1,89 @@
-/* These styles are just to make it easier to see the blocks, initially. */
-
-body {
-	--spacing: 2em;
-
-	font-family: monospace;
-	font-size: 18px;
-	padding: var(--spacing);
-}
-
-#channel-title {
-	font-family: 'Courier New', Courier, monospace;
-	font-size: 1rem;
-}
-
-#channel-blocks {
+:root {
+	--base-size: 20px;
+	--background-color: black; 
+	--font-color-primary: white;
+	--padding-left: 5%;
+	--padding-right: 5%;
+	--gap: 1rem;
+	--padding: 1rem;
+	--padding-bottom: 2rem;
+	--font-family: Trebuchet MS;
 	
+	font-size: var(--base-size);
+
+/* @media (min-width: 600px) {
+
+} */
+
+
+/* header */
+body {
+	/* padding-block: calc(5*var(--base-size));s */
+	padding-left: var(--padding-left);
+	padding-right: var(--padding-right);
+	background-color: var(--background-color);
+	color: var(--font-color-primary);
+}
+p {
+	padding-bottom: var(--padding-bottom);
+}
+h1 {
+	font-size: 5rem;
+	font-weight: 800;
+	font-family: var(--font-family);
+}
+h2 {
+	font-size: 1rem;
+	max-width: 150vh;
+	padding-top: 1rem;
+	line-height: 150%;
+	font-family: var(--font-family);
+}
+h3 {
+	font-size: var(--base-size);
+	font-family: var(--font-family);
 }
 
-body, header, section, ul, li, footer, address {
+
+/* main */
+#main {
+	block-size: 13px;
+	padding-top: var(--base-size);
+	padding-bottom: calc(2*var(--base-size));
+	max-width: 600px;
+}
+#channel-blocks {
 	display: grid;
-	gap: var(--spacing);
+	grid-template-columns: repeat(5, 1fr);
+	gap: var(--gap);
+	padding: var(var(--padding));
+	margin-left: center;
+	margin-right: center;
+}
+#channel-count {
+	text-align: center;
+	width: 100%;
+	height: 50%;
+	max-width: 500px;
+	max-height: 500px;
+	object-fit: cover;
+	aspect-ratio: 16 / 9; 	
+}
+img {
+display: block;
+margin: 0 auto;
 }
 
-main { max-width: 600px }
 
-a { color: blue; }
-em { font-style: italic; }
-strong { font-weight: bold; }
-p { max-width: 50ch; }
+/* footer */
+footer {
+	padding-top: var(--base-size);
+}
+
+
+/* link */
+a {
+	color: lightblue;
+	padding-bottom: var(--padding-bottom);
+}
+}
