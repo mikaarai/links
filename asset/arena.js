@@ -39,7 +39,7 @@ let renderBlock = (block) => {
 					<source media="(max-width: 640px)" srcset="${ block.image.large.url }">
 					<img src="${ block.image.original.url }">
 				</picture>
-				<h3>${ block.title }</h3>
+				<h3>${ block.title }</h3> 
 				${ block.description_html }
 				<p><a href="${ block.source.url }">See the original ↗</a></p>
 			</li>
@@ -138,7 +138,7 @@ let renderBlock = (block) => {
 		let userAddress =
 			`
 			<address>
-				<img src="${ user.avatar_image.display }">
+				<section id="channel-users"><img src="${ user.avatar_image.display }"></section>
 				<h3>${ user.first_name }</h3>
 				<p><a href="https://are.na/${ user.slug }">Are.na profile ↗</a></p>
 			</address>
