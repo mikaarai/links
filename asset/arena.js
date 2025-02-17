@@ -27,6 +27,10 @@ let placeChannelInfo = (data) => {
 let renderBlock = (block) => {
 	// To start, a shared `ul` where we’ll insert all our blocks
 	let channelBlocks = document.querySelector('#channel-blocks')
+	let imageBlocks = document.querySelector('#image-blocks')
+	let textBlocks = document.querySelector('#text-blocks')
+	let videoBlocks = document.querySelector('#video-blocks')
+
 
 	// Links!
 	if (block.class == 'Link') {
@@ -59,13 +63,21 @@ let renderBlock = (block) => {
 				</picture>
 			</li>
 			`;
-		channelBlocks.insertAdjacentHTML('beforeend', photoItem);
+		imageBlocks.insertAdjacentHTML('beforeend', photoItem);
 	}
 
 		// Text!
 		else if (block.class == 'Text') {
-			// …up to you!
+			let textItem =
+
+		'
+		<li class="text-block">
+		<p><em>Text</em></p>
+		<p>$block</p>
 		}
+
+		let textBlocks = document.querySelector('#text-blocks')
+
 	
 		// Uploaded (not linked) media…
 		else if (block.class == 'Attachment') {
@@ -76,7 +88,7 @@ let renderBlock = (block) => {
 				// …still up to you, but we’ll give you the `video` element:
 				let videoItem =
 					`
-					<li>
+					<li class="video-block">
 						<p><em>Video</em></p>
 						<video controls src="${ block.attachment.url }"></video>
 					</li>
