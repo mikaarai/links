@@ -33,7 +33,7 @@ let renderBlock = (block) => {
 
 
 	// Links!
-	if (block.class == 'Link') {
+	if (block.class_name == 'Link') {
 		let linkItem =
 			`
 			<li>
@@ -52,9 +52,8 @@ let renderBlock = (block) => {
 	}
 
 	// Images!
-	else if (block.class == 'Image') {
-		let photoItem =
-			`
+	else if (block.class_name == 'Image') { // Use 'class_name' instead of 'class'
+		let photoItem = `
 			<li>
 				<picture>
 					${ block.image.thumb ? `<source media="(max-width: 428px)" srcset="${ block.image.thumb.url }">` : '' }
@@ -62,25 +61,27 @@ let renderBlock = (block) => {
 					<img src="${ block.image.original.url }" alt="Image from Are.na">
 				</picture>
 			</li>
-			`;
+		`;
 		imageBlocks.insertAdjacentHTML('beforeend', photoItem);
 	}
 
 		// Text!
-		else if (block.class == 'Text') {
-			let textItem =
-
-		'
-		<li class="text-block">
-		<p><em>Text</em></p>
-		<p>$block</p>
+		else if (block.class_name == 'Text') {
+			let textItem = `
+				<li class="text-block">
+					<p><em>Text</em></p>
+					<p>${block.content_html}</p>
+				</li>
+			`;
+		
+			let textBlocks = document.querySelector('#text-blocks');
+    		if (textBlocks) {
+      			textBlocks.insertAdjacentHTML('beforeend', textItem);
+    		}
 		}
-
-		let textBlocks = document.querySelector('#text-blocks')
-
 	
 		// Uploaded (not linked) media…
-		else if (block.class == 'Attachment') {
+		else if (block.class_name == 'Attachment') {
 			let attachment = block.attachment.content_type // Save us some repetition
 	
 			// Uploaded videos!
@@ -110,7 +111,7 @@ let renderBlock = (block) => {
 					`
 					<li>
 						<p><em>Audio</em></p>
-						<audio controls src="${ block.attachment.url }"></video>
+						<audio controls src="${ block.attachment.url }"></audio>
 					</li>
 					`
 				channelBlocks.insertAdjacentHTML('beforeend', audioItem)
@@ -119,7 +120,7 @@ let renderBlock = (block) => {
 		}
 	
 		// Linked media…
-		else if (block.class == 'Media') {
+		else if (block.class_name == 'Media') {
 			let embed = block.embed.type
 	
 			// Linked video!
@@ -141,7 +142,6 @@ let renderBlock = (block) => {
 				// …up to you!
 			}
 		}
-	}
 	
 	
 	

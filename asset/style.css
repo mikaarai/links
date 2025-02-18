@@ -13,7 +13,7 @@
 	--margin-left: 5rem;
 
 	font-size: var(--base-size);
-
+}
 
 /* header */
 body {
@@ -53,7 +53,6 @@ li {
 	padding-left: var(--padding-left);
 	}
 #channel-users {	
-	float: left;
 	margin-right: 20px;
 } 
 .book-content {
@@ -64,6 +63,10 @@ li {
 	margin-top: 7rem;
 	margin-left: var(--margin-left);
 }
+.background-floating {
+	z-index: -1;
+	position: absolute;
+}
 
 
 /* main */
@@ -72,14 +75,14 @@ li {
 	padding-top: var(--base-size);
 	padding-bottom: calc(2*var(--base-size));
 	max-width: 600px;
+	position: relative;
+	z-index: 1;
 }
 #channel-blocks {
 	display: grid;
 	grid-template-columns: repeat(5, 1fr);
 	gap: var(--gap);
 	padding: var(var(--padding));
-	margin-left: center;
-	margin-right: center;
 }
 #channel-count {
 	text-align: center;
@@ -88,8 +91,10 @@ li {
 } 
 img {
 display: block;
-margin-bottom: 2rem;
+margin-bottom: 1.5rem;
 width: 8rem;
+padding-left: 3%;
+padding-top: 2%;
 /* position: absolute;
 z-index: -1; */
 }
@@ -122,6 +127,22 @@ a {
 }
 
 @media (min-width: 600px) {
+header {
+	/* margin-top: 0; */
+}
+
+body {
+	background-image: url('old-book-background.png');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-color: red; /* Temporary test */
 
 }
 
+img {
+	width: 20rem !important;
+	height: auto;
+	max-width: unset;
+	padding-right: 5%;
+	}
+}
