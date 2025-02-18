@@ -23,7 +23,7 @@ body {
 	padding-top: var(--padding-top);
 	
 /* background-image */
-	background-image: url('/asset/old-book-background.png');
+	background-image: url('old-book-background.png');
 	background-size: cover;
 	background-repeat: no-repeat;
 	height: 75vh;
@@ -42,15 +42,11 @@ h1 {
 	color: var(--font-color-primary);
 	font-weight: 500;
 	font-family: var(--font-family-scary);
-	/* margin-top: var(--margin-top); */ 
-	/* text-align: left; */
 }
 h2 {
 	padding-right: var(--padding-right);
 	color: var(--font-color-primary);
 	font-family: var(--font-family-scary);
-	/* margin-top: var(--margin-top);  */
-	/* text-align: right; */
 }
 li {
 	font-size: var(--base-size);
@@ -94,30 +90,29 @@ img {
 display: block;
 margin-bottom: 2rem;
 width: 8rem;
+/* position: absolute;
+z-index: -1; */
 }
 
 
 /* footer */
 footer {
-	padding-bottom: var(--padding-bottom);
 	display: flex;
 	justify-content: space-between;
-	align-items: flex-end;
+	align-items: center;
 	position: fixed;
 	bottom: 0;
 	left: 0;
 	width: 100%;
-	padding: 1rem 3%;
+	padding: 1rem 3%; 
 }
 h3 {
 	color: var(--font-color-primary);
 	font-family: var(--font-family-scary);
-	margin: 0; 
 }
 h4 {
 	color: var(--font-color-primary);
 	font-family: var(--font-family-scary);
-	margin: 0; 
 }
 
 
