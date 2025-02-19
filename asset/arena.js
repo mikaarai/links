@@ -142,7 +142,7 @@ let renderBlock = (block) => {
 				// …up to you!
 			}
 		}
-	
+}
 	
 	
 	// It‘s always good to credit your work:
