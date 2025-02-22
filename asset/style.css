@@ -1,5 +1,6 @@
 :root {
 	--base-size: 1rem;
+	--base-size-cap: 0.5rem;
 	--background-color: black; 
 	--font-color-primary: white;
 	--font-color-secondary: black;
@@ -10,23 +11,20 @@
 	--gap: 1rem;
 	--padding-bottom: 1rem;
 	--font-family-scary: Special Elite;
-	/* --margin-left: 5rem; */
 
 	font-size: var(--base-size);
 }
+
+
 
 /* header */
 body {
 	background-color: var(--background-color);
 	color: var(--font-color-primary);
 	padding-left: var(--padding-left);
+	padding-right: var(--padding-right);
 	padding-top: var(--padding-top);
-	/* prevents from scrolling */
-	overflow: hidden;
 	height: 100%; 
-}
-p {
-	padding-bottom: var(--padding-bottom);
 }
 header {
 	display: flex;  
@@ -44,29 +42,31 @@ h2 {
 	color: var(--font-color-primary);
 	font-family: var(--font-family-scary);
 }
-ul {
-	/* margin-top: 1rem;
-	padding-top: 15%; */
+
+
+
+/* book */
+
+/* portrait */
+.fyodor-dostoevsky {
+	display: block;
+	width: 12rem;
+	padding-top: 8%;
+	padding-left: 20%;
+	margin-bottom: 1.5rem;
 }
-img {
-display: block;
-margin-bottom: 1.5rem;
-width: 12rem;
-padding-left: 20%;
-padding-top: 8%;
-/* position: absolute;
-z-index: -1; */
-}
-li {
+
+
+/* desciption */
+/* .fyodor-dostoevsky-cap {
 	font-size: var(--base-size);
 	font-family: var(--font-family-scary);
 	line-height: 220%;
 	color: var(--font-color-secondary);
-	padding-left: 20%;
-}	
-#channel-users {	
-	margin-right: 20px;
-} 
+} */
+
+
+/* table of content or filter*/
 .book-content {
 	margin-top: 25%;
 	background-image: url('old-book-background.png');
@@ -75,57 +75,92 @@ li {
 	width: 100vw; 
 	height: 63vh;
 }
-.background-floating {
+li {
+	font-size: var(--base-size);
+	font-family: var(--font-family-scary);
+	line-height: 220%;
+	color: var(--font-color-secondary);
+	padding-left: 20%;
+}	
+
+
+/* .background-floating {
 	z-index: -1;
 	position: absolute;
-}
+	} */
 
 
-/* main */
+
+/* media block */
 #main {
 	block-size: 13px;
-	padding-top: var(--base-size);
 	padding-bottom: calc(2*var(--base-size));
-	max-width: 300px;
 }
 #channel-blocks {
+	width: 23rem;
+	padding-top: 10rem;
 	display: grid;
 	/* grid-template-columns: repeat(5, 1fr); */
-	gap: var(--gap);
+	/* gap: var(--gap); */
 	padding: var(var(--padding));
-}
+	}
+#channel-blocks li {
+	border: 1px solid #565656;
+	padding-left: 0%;
+	visibility: visible;
+	opacity: 1;
+	transition: opacity 3s ease-in-out; 
+}	
 #channel-count {
 	text-align: center;
 	max-height: 400px;
 	object-fit: cover;
 } 
+#channel-users {	
+	margin-right: 20px;
+} 
+/* hide the unselected category */
+.hide {
+	visibility: hidden;
+	display: none;
+	opacity: 0;
+}
+/* show the selected category */
+.show-audio li.audio-block,
+.show-link li.link-block,
+.show-text li.text-block,
+.show-image li.image-block,
+.show-video li.video-block {
+	visibility: visible;
+	opacity: 1;
+}
+/* link */
+a {
+	color: white;
+}
+
 
 
 /* footer */
 footer {
 	display: flex;
 	justify-content: space-between;
-	align-items: center;
-	position: fixed;
-	bottom: 0;
-	left: 0;
+	position: absolute;
 	width: 100%;
-	padding: 1rem 3%; 
+	padding-top: 10%;
+	padding-bottom: 3%; 
 }
+/* author */
 h3 {
 	color: var(--font-color-primary);
 	font-family: var(--font-family-scary);
 }
+/* designer */
 h4 {
 	color: var(--font-color-primary);
 	font-family: var(--font-family-scary);
 }
 
-
-/* link */
-a {
-	color: white;
-}
 
 
 @media (min-width: 600px) {
