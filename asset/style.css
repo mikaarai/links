@@ -1,6 +1,6 @@
 :root {
 	--base-size: 1rem;
-	--base-size-h5: 2rem;
+	--base-size-h5: 1.5rem;
 	--base-size-cap: 0.5rem;
 	--background-color: black; 
 	--font-color-primary: white;
@@ -118,13 +118,11 @@ li {
 }
 #channel-blocks {
 	display: grid;
-	grid-template-columns: repeat(3, 1fr); 
+	grid-template-columns: repeat(2, 1fr); 
 	padding-top: 8rem;
 	align-items: center;
-	/* padding: var(--padding); */
-	/* aspect-ratio: 1 / 1;  */
-	/* width: 23rem; */
-	/* grid-auto-rows: 200px; */
+	aspect-ratio: 1 / 1; 
+
 	}
 #channel-blocks li {
 	border: 1px solid #565656;
