@@ -73,16 +73,20 @@
 			channelBlocks.insertAdjacentHTML('beforeend', photoItem);
 		}
 		
+	
 		// Text!
 		else if (block.class == 'Text') {
-			let textItem = `
-				<li class="text-block">
-					<p><em>Text</em></p>
-					<p>${block.content_html}</p>
-				</li>
-			`
-      		textItem.insertAdjacentHTML('beforeend', textItem);
-		}
+			let textItem = 
+		`
+			<li class="text-block">
+				<button class="text-block">
+					<blockquote>${block.content}</blockquote>
+					<h3 class="block-title">${block.title}</h3>
+				</button>
+			</li>
+		`
+		channelBlocks.insertAdjacentHTML('beforeend', textItem)
+	}
 	
 		// Uploaded (not linked) media…
 		else if (block.class == 'Attachment') {

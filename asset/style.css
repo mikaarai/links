@@ -131,6 +131,12 @@ li {
 	transition: opacity 3s ease-in-out; 
 	background-color: var(--background-color-brown);
 }	
+.text-block {
+	color: var(--background-color-offwhite);
+	line-height: 150%;
+	padding-top: calc(2.5*var(--padding-top));
+	padding-left: calc(2*var(--padding-left));
+}
 
 #channel-blocks img {
 	width: 100%;
@@ -296,7 +302,6 @@ p {
 /* footer */
 footer {
 	padding-bottom: calc(2*var(--padding-bottom));
-	/* padding-left: var(--padding-left); */
 }
 
 
