@@ -1,6 +1,5 @@
 :root {
 	--base-size: 1rem;
-	--base-size-h5: 1.5rem;
 	--base-size-cap: 0.5rem;
 	--background-color: black; 
 	--font-color-primary: white;
@@ -12,6 +11,10 @@
 	--padding-bottom: 1rem;
 	--font-family-scary: Special Elite;
 	--font-family-scripted: WindSong;
+	--font-family-h1: Cinzel Decorative;
+	--background-color-offwhite: #D8D3BB;
+	--background-color-brown: #1E140C;
+	--background-color-green: #898E73;
 
 
 	font-size: var(--base-size);
@@ -21,44 +24,42 @@
 
 /* header */
 body {
-	background-color: var(--background-color);
 	color: var(--font-color-primary);
-	padding-left: var(--padding-left);
-	padding-right: var(--padding-right);
-	padding-top: var(--padding-top);
-	height: 100%; 
+	background-color: var(--background-color-offwhite);
 }
 header {
-	display: flex;  
-    justify-content: space-between; 
-    align-items: center; 
+ 	z-index: 2;
+	padding-left: var(--padding-left);
+	padding-top: calc(5*var(--padding-top));
+	background-color: var(--background-color-brown);
 }
 h1 {
-	font-size: var(--base-size);
+	padding-top: calc(1*var(--padding-top));
+	font-size: calc(3*var(--base-size));
 	color: var(--font-color-primary);
 	font-weight: 500;
-	font-family: var(--font-family-scary);
+	font-family: var(--font-family-h1);
+  	color: white;
 }
 h2 {
 	padding-right: var(--padding-right);
 	color: var(--font-color-primary);
 	font-family: var(--font-family-scary);
+	color: white;
 }
 h5 {
-	padding-top: calc(5*var(--padding-top));
+	padding-top: var(--padding-top);
+	padding-bottom: calc(2*var(--padding-bottom));
 	font-family: var(--font-family-scripted);
-	font-size: var(--base-size-h5);
-	padding-left: 1.5rem;
-    padding-right: 1.5rem;
-    align-items: center;
+	font-size: calc(1.5*var(--base-size));
 }
 
 
 
 /* intro vid */
-.intro {
-	padding-top: 8rem;
-	align-items: center;
+.intro { 
+	background-color: var(--background-color-brown);
+	padding-bottom: calc(4*var(--padding-bottom));
 }
 
 
@@ -75,23 +76,16 @@ h5 {
 }
 
 
-/* desciption */
-/* .fyodor-dostoevsky-cap {
-	font-size: var(--base-size);
-	font-family: var(--font-family-scary);
-	line-height: 220%;
-	color: var(--font-color-secondary);
-} */
-
 
 /* table of content or filter*/
 .book-content {
-	margin-top: 25%;
 	background-image: url('old-book-background.png');
 	background-size: cover; 
 	background-repeat: no-repeat;
 	width: 100vw; 
 	height: 63vh;
+	background-color: var(--background-color-brown);
+	padding-bottom: calc(5*var(--padding-bottom));
 }
 li {
 	font-size: var(--base-size);
@@ -111,26 +105,46 @@ li {
 #channel-blocks {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr); 
-	padding-top: 8rem;
+	padding-top: 4rem;
 	align-items: center;
-	aspect-ratio: 1 / 1; 
-
-	}
+	gap: 2rem 0.5rem;
+	padding-left: var(--padding-left);
+}
 #channel-blocks li {
-	border: 1px solid #565656;
-	padding-left: 0%;
+	width: 170px; 
+	height: 220px; 
+	overflow: hidden;
+	object-fit: cover;
+	border-radius: 100px 100px 0 0;
+	border: 4px solid #565656;
+	padding-left: 0;
 	visibility: visible;
 	opacity: 1;
 	transition: opacity 3s ease-in-out; 
+	background-color: var(--background-color-brown);
 }	
+#channel-blocks img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
 #channel-count {
 	text-align: center;
 	max-height: 400px;
 	object-fit: cover;
 } 
 #channel-users {	
+	border-radius: 100px 100px 0 0;
 	margin-right: 20px;
 } 
+p {
+	padding-left: var(--padding-left);
+	padding-top: var(--padding-top);
+	padding-bottom: calc(2*var(--padding-bottom));
+	color: var(--background-color-brown);
+	font-size: var(--base-size);
+	font-family: var(--font-family-scary);
+}
 /* hide the unselected category */
 .hide {
 	visibility: hidden;
@@ -147,222 +161,29 @@ li {
 	opacity: 1;
 }
 /* link */
-a {
-	color: rgb(215, 71, 71);
-}
 span {
-	color: rgb(146, 17, 17);
+	text-decoration: underline;
 }
 
 
 
 /* footer */
 footer {
-	display: flex;
-	justify-content: space-between;
-	position: absolute;
-	width: 100%;
-	padding-top: 10%;
-	padding-bottom: 3%; 
-}
-/* author */
-h3 {
-	color: var(--font-color-primary);
-	font-family: var(--font-family-scary);
-}
-/* designer */
-h4 {
-	color: var(--font-color-primary);
-	font-family: var(--font-family-scary);
-}
-
-
-
-@media (min-width: 600px) {
-:root {
-	--base-size: 1rem;
-	--base-size-h5: 1.5rem;
-	--base-size-cap: 0.5rem;
-	--background-color: black; 
-	--font-color-primary: white;
-	--font-color-secondary: black;
-	--padding-left: 2%;
-	--padding-right: 2%;
-	--margin-top: 8rem;
-	--padding-top: 2%; 
-	--padding-bottom: 1rem;
-	--font-family-scary: Special Elite;
-	--font-family-scripted: WindSong;
-}
-
-
-
-/* header */
-body {
-	background-color: var(--background-color);
-	color: var(--font-color-primary);
-	padding-left: var(--padding-left);
-	padding-right: var(--padding-right);
 	padding-top: var(--padding-top);
-	height: 100%; 
-}
-header {
-	display: flex;  
-    justify-content: space-between; 
-    align-items: center; 
-}
-h1 {
-	font-size: var(--base-size);
-	color: var(--font-color-primary);
-	font-weight: 500;
+	padding-bottom: var(--padding-bottom); 
+	padding-left: var(--padding-left);
+	color: var(--background-color-brown);
 	font-family: var(--font-family-scary);
-}
-h2 {
-	padding-right: var(--padding-right);
-	color: var(--font-color-primary);
-	font-family: var(--font-family-scary);
-}
-h5 {
-	padding-top: calc(5*var(--padding-top));
-	font-family: var(--font-family-scripted);
-	font-size: var(--base-size-h5);
-	padding-left: 1.5rem;
-    padding-right: 1.5rem;
-    align-items: center;
-}
-.book-content {
-	background-image: url('old-book-background.png');
-	background-size: contain; 
-	background-repeat: no-repeat;
-	background-position: center;
-	margin-top: var(--margin-top);
-	font-family: var(--font-family-scary);
-}
-/* intro vid */
-.intro {
-	padding-top: 4rem;
-	align-items: center;
-	display: flex;
-	width: 100vw;
-    object-fit: cover;
+	line-height: 150%;
+	background-color: var(--background-color-green);
 }
 
 
-
-/* book */
-
-/* portrait */
-.fyodor-dostoevsky {
-	display: block;
-	width: 30rem;
-	padding-top: 8%;
-	padding-left: 50%;
-	margin-bottom: 1.5rem;
-}
-
-
-/* desciption */
-/* .fyodor-dostoevsky-cap {
-	font-size: var(--base-size);
-	font-family: var(--font-family-scary);
-	line-height: 220%;
-	color: var(--font-color-secondary);
-} */
-
-
-/* table of content or filter*/
-.book-content {
-	margin-top: 5rem;
-	background-image: url('old-book-background.png');
-	background-size: contain; 
-	background-repeat: no-repeat;
-	/* width: 100%; 
-	height: 100%; */
-}
-li {
-	font-size: var(--base-size);
-	font-family: var(--font-family-scary);
-	line-height: 220%;
-	color: var(--font-color-secondary);
-	padding-left: 34%;
-}	
-
-
-
-/* media block */
-#main {
-	block-size: 13px;
-	padding-bottom: calc(2*var(--base-size));
-}
-#channel-blocks {
-	display: grid;
-	grid-template-columns: repeat(4, 1fr); 
-	padding-top: 8rem;
-	align-items: center;
-	aspect-ratio: 1 / 1; 
-
-	}
-#channel-blocks li {
-	border: 1px solid #565656;
-	padding-left: 0%;
-	visibility: visible;
-	opacity: 1;
-	transition: opacity 3s ease-in-out; 
-}	
-#channel-count {
-	text-align: center;
-	max-height: 400px;
-	object-fit: cover;
-} 
-#channel-users {	
-	margin-right: 20px;
-} 
-/* hide the unselected category */
-.hide {
-	visibility: hidden;
-	display: none;
-	opacity: 0;
-}
-/* show the selected category */
-.show-audio li.audio-block,
-.show-link li.link-block,
-.show-text li.text-block,
-.show-image li.image-block,
-.show-video li.video-block {
-	visibility: visible;
-	opacity: 1;
-}
+/* 
+@media (min-width: 600px) {
 /* link */
-a {
-	color: rgb(215, 71, 71);
-}
 a:hover {
 	font-family: var(--font-family-scripted);
 	color: black;
 }
-span {
-	color: rgb(146, 17, 17);
-}
-
-
-
-/* footer */
-footer {
-	display: flex;
-	justify-content: space-between;
-	position: absolute;
-	width: 100%;
-	padding-top: 10%;
-	padding-bottom: 3%; 
-}
-/* author */
-h3 {
-	color: var(--font-color-primary);
-	font-family: var(--font-family-scary);
-}
-/* designer */
-h4 {
-	color: var(--font-color-primary);
-	font-family: var(--font-family-scary);
-}
-}
+} */
