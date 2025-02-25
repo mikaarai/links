@@ -102,10 +102,15 @@ li {
 	block-size: 13px;
 	padding-bottom: calc(2*var(--base-size));
 }
+.curly-crown {
+	padding-left: var(--padding-left);
+	padding-right: var(--padding-right);
+	padding-top: calc(3*var(--padding-top));
+}
 #channel-blocks {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr); 
-	padding-top: 4rem;
+	padding-top: 1.5rem;
 	align-items: center;
 	gap: 2rem 0.5rem;
 	padding-left: var(--padding-left);
