@@ -1,1 +1,1 @@
-# links
+This project explores philosophy, covering famous thinkers, existentialism, and perception. To me, philosophy is closely tied to history, books, and education, which inspired this website’s design. The content was curated by Inji. The site is built with HTML, CSS, and JavaScript, and it integrates the Are.na API for content.
