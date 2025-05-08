@@ -35,30 +35,6 @@
 		// let videoBlocks = document.querySelector('#video-blocks')
 
 
-		// Links!
-		if (block.class_name == 'Link') {
-			let linkItem =
-				`
-				// added a class so that i can target it on css
-				<li class="link-block">
-				<p><em>Link</em></p>
-				<picture>
-					<source media="(max-width: 428px)" srcset="${ block.image.thumb.url }">
-					<source media="(max-width: 640px)" srcset="${ block.image.large.url }">
-					<img src="${ block.image.original.url }">
-				</picture>
-				<h3>${ block.title }</h3> 
-				${ block.description_html }
-				<p><a href="${ block.source.url }">See the original ↗</a></p>
-			</li>
-			`
-				// linkItem will be place here
-				// beforeend = before the end of the element
-				// insertAdjacentHTML = its right next to (telling the computer to put right next to the html)
-				channelBlocks.insertAdjacentHTML('beforeend', linkItem)
-			}
-		
-
 		// Images!
 		else if (block.class == 'Image') { 
 			let photoItem = `
@@ -107,10 +83,6 @@
 				// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video
 			}
 	
-			// Uploaded PDFs!
-			else if (attachment.includes('pdf')) {
-				// …up to you!
-			}
 	
 			// Uploaded audio!
 			else if (attachment.includes('audio')) {
@@ -199,7 +171,7 @@
 		
 		function showCategory(categoryClass) {
 			// remove all possible filter classes
-			channelBlocks.classList.remove('show-video', 'show-image', 'show-text', 'show-link', 'show-audio', 'show-all');
+			channelBlocks.classList.remove('show-video', 'show-image', 'show-text', 'show-audio', 'show-all');
 		
 			// add the correct category class
 			channelBlocks.classList.add(categoryClass);

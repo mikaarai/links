@@ -1,21 +1,19 @@
 :root {
+	/* size */
 	--base-size: 1rem;
 	--base-size-cap: 0.5rem;
-	--background-color: black; 
-	--font-color-primary: white;
-	--font-color-secondary: black;
-	--padding-left: 3%;
-	--padding-right: 3%;
-	--margin-top: 1rem;
-	--padding-top: 5%; 
-	--padding-bottom: 1rem;
-	--font-family-scary: Special Elite;
-	--font-family-scripted: WindSong;
-	--font-family-h1: Cinzel Decorative;
-	--background-color-offwhite: #D8D3BB;
-	--background-color-brown: #1E140C;
-	--background-color-green: #898E73;
 
+	/* color */
+	--background-color: black; 
+	--color-primary: white;
+
+	/* spacing */
+	--padding: 1rem;
+
+	/* family */
+	--font-family-h1: Montagu Slab;
+	--font-family-h2: Fustat;
+	--font-family-h3: Montaga;
 
 	font-size: var(--base-size);
 }
@@ -24,84 +22,45 @@
 
 /* header */
 body {
+	color: var(--color-primary);
+	background-color: var(--background-color);
 	color: var(--font-color-primary);
-	background-color: var(--background-color-offwhite);
+	padding: var(--padding);
 }
 header {
- 	z-index: 2;
-	padding-left: var(--padding-left);
-	padding-top: calc(5*var(--padding-top));
-	/* video resource https://www.youtube.com/watch?v=p1yDbck93sE */
-	background-image: url('roman-ancient-bath.gif');
-	background-size: cover; 
-	background-repeat: no-repeat;
-	padding-bottom: calc(5*var(--padding-bottom));
+	padding-left: var(--padding);
+	padding-top: calc(5*var(--padding));
+	padding-bottom: calc(5*var(--padding));
 	align-items: center;
 	text-align: center;
 }
 h1 {
-	padding-top: calc(1*var(--padding-top));
+	padding-top: calc(1*var(--padding));
 	font-size: calc(3*var(--base-size));
-	color: var(--font-color-primary);
-	font-weight: 500;
+	/* font-weight: 500; */
 	font-family: var(--font-family-h1);
-  	color: white;
 }
 h2 {
-	padding-right: var(--padding-right);
-	color: var(--font-color-primary);
-	font-family: var(--font-family-scary);
-}
-h5 {
-	padding-top: var(--padding-top);
-	padding-bottom: calc(2*var(--padding-bottom));
-	font-family: var(--font-family-scripted);
-	font-size: calc(1.5*var(--base-size));
+	padding-right: var(--padding);
+	font-family: var(--font-family-h2);
 }
 
 
-
-/* book */
-
-/* portrait */
-.fyodor-dostoevsky {
-	width: 12rem;
-	padding-top: 8%;
-	padding-left: 18%;
-	margin-bottom: 1.5rem;
+/* filter*/ 
+.filter {
+	align-content: center;
 }
-/* table of content or filter*/
-.book-content {
-	background-image: url('old-book-background.png');
-	background-size: cover; 
-	background-repeat: no-repeat;
-	width: 100vw; 
-	height: 63vh;
-	background-color: var(--background-color-brown);
-	padding-bottom: calc(5*var(--padding-bottom));
-}
-.book {
-	display: none;
-}
-li {
+filter li {
 	font-size: var(--base-size);
-	font-family: var(--font-family-scary);
-	line-height: 220%;
-	color: var(--font-color-secondary);
-	padding-left: 18%;
+	font-family: var(--font-family-h2);
 }	
 
 
 
-/* media block */
+/* content */
 #main {
 	block-size: 13px;
 	padding-bottom: calc(2*var(--base-size));
-}
-.curly-crown {
-	padding-left: var(--padding-left);
-	padding-right: var(--padding-right);
-	padding-top: calc(1.5*var(--padding-top));
 }
 #channel-blocks {
 	display: grid;
@@ -109,7 +68,7 @@ li {
 	padding-top: 1.5rem;
 	align-items: center;
 	gap: 2rem 0.5rem;
-	padding-left: var(--padding-left);
+	padding-left: var(--padding);
 }
 #channel-blocks li {
 	width: 170px; 
@@ -122,13 +81,12 @@ li {
 	visibility: visible;
 	opacity: 1;
 	transition: opacity 3s ease-in-out; 
-	background-color: var(--background-color-brown);
 }	
 .text-block {
-	color: var(--background-color-offwhite);
 	line-height: 150%;
-	padding-top: calc(2.5*var(--padding-top));
-	padding-left: calc(2*var(--padding-left));
+	padding-top: calc(2.5*var(--padding));
+	padding-left: calc(2*var(--padding));
+	font-family: var(--font-family-h3);
 }
 
 #channel-blocks img {
@@ -146,12 +104,11 @@ li {
 	margin-right: 20px;
 } 
 p {
-	padding-left: var(--padding-left);
-	padding-top: var(--padding-top);
-	padding-bottom: calc(2*var(--padding-bottom));
-	color: var(--background-color-brown);
+	padding-left: var(--padding);
+	padding-top: var(--padding);
+	padding-bottom: calc(2*var(--padding));
 	font-size: var(--base-size);
-	font-family: var(--font-family-scary);
+	font-family: var(--font-family-h2);
 }
 /* hide the unselected category */
 .hide {
@@ -177,10 +134,9 @@ span {
 
 /* footer */
 footer {
-	padding-top: var(--padding-top);
-	padding-bottom: var(--padding-bottom); 
-	color: var(--background-color-brown);
-	font-family: var(--font-family-scary);
+	padding-top: var(--padding);
+	padding-bottom: var(--padding); 
+	font-family: var(--font-family-h3);
 	line-height: 150%;
 	text-align: center;
 }
@@ -201,74 +157,42 @@ html, body {
 	padding: 0;
 }
 header {
-	background-image: url('roman-ancient-bath.gif');
-	padding-top: var(--padding-top);
-	background-color: var(--background-color-brown);
-	background-size: cover; 
-	background-repeat: no-repeat;
-	padding-bottom: calc(2*var(--padding-bottom));
+	padding-top: var(--padding);
+	padding-bottom: calc(2*var(--padding));
 }
 h1 {
 	font-size: calc(10*var(--base-size));
 	line-height: 100%;
-	padding-top: calc(0.5*var(--padding-top));
+	padding-top: calc(0.5*var(--padding));
 }
 h2 {
 	font-size: calc(1.2*var(--base-size));
-}
-h5 {
-	padding-top: calc(0.5*var(--padding-top));
-	font-size: calc(2*var(--base-size));
 }
 
 
 
 /* intro vid */
 .intro { 
-	background-color: var(--background-color-brown);
-	padding-bottom: calc(4*var(--padding-bottom));	
+	padding-bottom: calc(4*var(--padding));	
 }
 img.gif {
 	height: 650px;
-	background-color: var(--background-color-brown);
 }
 
 
 
-/* book */
-
-/* portrait */
-.fyodor-dostoevsky {
-	width: 380px;
-    height: auto;
-    position: relative;
-    float: right;
-    margin-right: 12rem; 
-    z-index: 10; 
-}
-/* table of content or filter */
-.book-content {
-    width: 70vw;
-    height: 50vh;
-	background-color: var(--background-color-brown);
-}
+/* filter */
 li {
-	padding-left: 18%;
+align-content: center;
 }	
 ul {
 padding-top: calc(1.5*var(--padding-top));
 padding-bottom: calc(10*var(--padding-bottom));
 }
-.curly-crown {
-	margin-left: 25%;
-	width: 50%;
-	padding-top: calc(0.5*var(--padding-top));
-	padding-bottom: calc(2*var(--padding-bottom));
-}
 
 
 
-/* media block */
+/* content */
 #channel-blocks {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr); 
@@ -284,26 +208,14 @@ padding-bottom: calc(10*var(--padding-bottom));
 }
 p {
 	padding-left: 0;
-	padding-bottom: calc(4*var(--padding-bottom));
-	padding-top: calc(0.5*var(--padding-top));
+	padding-bottom: calc(4*var(--padding));
+	padding-top: calc(0.5*var(--padding));
 }
 
 
 
 /* footer */
 footer {
-	padding-bottom: calc(2*var(--padding-bottom));
-}
-
-
-
-/* link */
-ul li a {
-	font-family: var(--font-family-scary);
-}
-ul li a:hover {
-	color: brown;
-	font-family: var(--font-family-scripted);
-	font-weight: bold;
+	padding-bottom: calc(2*var(--padding));
 }
 }
