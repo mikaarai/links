@@ -16,11 +16,16 @@
 	let channelTitle = document.querySelector('#channel-title')
 	let channelDescription = document.querySelector('#channel-description')
 	let channelCount = document.querySelector('#channel-count')
-
-// Then set their content/attributes to our data:
-// innerHTML = assigning task or changing the text like i want this to be this (i want channelTitle to be data.title)
+	let channelLink = document.querySelector('#channel-link')
+	
+	
+	// Then set their content/attributes to our data:
+	// innerHTML = assigning task or changing the text like i want this to be this (i want channelTitle to be data.title)
 	channelTitle.innerHTML = data.title
-// channelDescription.innerHTML = window.markdownit().render(data.metadata.description) // Converts Markdown → HTML
+	channelLink.href = `https://www.are.na/channel/${channelSlug}`
+	
+ // Converts Markdown → HTML
+	channelDescription.innerHTML = window.markdownit().render(data.metadata.description || '')
 	channelCount.innerHTML = data.length
 	}
 
@@ -28,18 +33,14 @@
 	let renderBlock = (block) => {
 // To start, a shared `ul` where we’ll insert all our blocks
 	let channelBlocks = document.querySelector('#channel-blocks')
-	let imageBlocks = document.querySelector('#image-blocks')
-	let textBlocks = document.querySelector('#text-blocks')
-	let videoBlocks = document.querySelector('#video-blocks')
 	
 
 // Images!
 	if (block.class == 'Image') { 
 		let photoItem = `
 			<li class="image-block">
-				<button class="image-button">
-				<img src="${block.image.original.url}" alt="Image from Are.na">
-				<h3 class="block-title">${block.title || ''}</h3>
+				<button class="arch-button">
+					<img src="${block.image.original.url}" alt="Image from Are.na">
 				</button>
 				<dialog>
 				<div>
@@ -58,11 +59,18 @@
 	} else if (block.class == 'Text') {
 		let textItem = 	`
 			<li class="text-block">
-				<button class="text-block">
+				<button class="arch-button">
 					<blockquote>${block.content}</blockquote>
 					<h3 class="block-title">${block.title}</h3>
 				</button>
-				      <h3 class="block-title">${block.title || ''}</h3>
+				<dialog>
+				<div>
+				<h3 class="block-title-style">${block.title || ''}</h3>
+				<p class="dialog-content">${block.content}</p>
+				${block.description_html || ''}
+				</div>
+				<button class="close-button">×</button>
+      			</dialog>
 
 			</li>
 		`

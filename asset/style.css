@@ -26,27 +26,42 @@ body {
 	background-color: var(--background-color);
 	color: var(--font-color-primary);
 	padding: var(--padding);
+	margin-left: calc(2*var(--padding));
 }
 header {
 	padding-left: var(--padding);
 	padding-top: calc(5*var(--padding));
 	padding-bottom: calc(5*var(--padding));
-	align-items: center;
-	text-align: center;
+	/* align-items: center; */
+	/* text-align: center; */
 }
-h1 {
-	padding-top: calc(1*var(--padding));
-	font-size: calc(3*var(--base-size));
-	/* font-weight: 500; */
+#channel-title {
+	padding-top: calc(3*var(--padding));
+	padding-bottom: calc(3*var(--padding));
+	font-size: calc(7*var(--base-size));
 	font-family: var(--font-family-h1);
+	color: var(--color-primary);
+	max-width: 50vw; 
+
 }
-h2 {
+#channel-description {
 	padding-right: var(--padding);
 	font-family: var(--font-family-h2);
+	color: var(--color-primary);
+	max-width: 45vw; 
+}
+#channel-link {
+	padding-right: var(--padding);
+	font-family: var(--font-family-h2);
+	color: var(--color-primary);
+	font-size: calc(1.5*var(--base-size));
+
 }
 h3 {
 	padding-right: var(--padding);
 	font-family: var(--font-family-h3);
+	font-size: calc(2*var(--base-size));
+	padding-bottom: var(--base-size);
 }
 
 
@@ -74,7 +89,7 @@ filter li {
 	gap: 2rem 0.5rem;
 	padding-left: var(--padding);
 }
-#channel-blocks li {
+.arch-button {
 	width: 170px; 
 	height: 220px; 
 	overflow: hidden;
@@ -85,6 +100,8 @@ filter li {
 	visibility: visible;
 	opacity: 1;
 	transition: opacity 3s ease-in-out; 
+	cursor: pointer;
+
 }	
 .text-block {
 	line-height: 150%;
@@ -110,8 +127,7 @@ filter li {
 p {
 	padding-left: var(--padding);
 	padding-top: var(--padding);
-	padding-bottom: calc(2*var(--padding));
-	font-size: var(--base-size);
+	font-size: calc(1.5*var(--base-size));
 	font-family: var(--font-family-h2);
 }
 /* hide the unselected category */
@@ -134,14 +150,6 @@ span {
 	text-decoration: underline;
 }
 
-/* title */
-.block-title {
-	font-family: var(--font-family-h3);
-	font-size: calc(2*var(--base-size));
-	color: var(--color-primary);
-	margin-top: calc(.5*var(--base-size));
-}
-
 
 /* modal */
 dialog {
@@ -149,6 +157,7 @@ dialog {
 	border-radius: 24px;
 	border: 4px solid #565656;
 	max-width: 600px;
+	max-height: 800px;
 	width: 50%;
 	color: var(--color-primary);
 	background-color: var(--background-color);
@@ -181,9 +190,9 @@ footer {
 
 /* header */
 html, body {
-  	place-items: center;
-	margin: 0;
-	padding: 0;
+	margin-left: calc(1.5*var(--padding));
+	margin-top: var(--padding);
+
 }
 header {
 	padding-top: var(--padding);
@@ -237,7 +246,6 @@ padding-bottom: calc(10*var(--padding-bottom));
 }
 p {
 	padding-left: 0;
-	padding-bottom: calc(4*var(--padding));
 	padding-top: calc(0.5*var(--padding));
 }
 
