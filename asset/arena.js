@@ -37,11 +37,18 @@
 	if (block.class == 'Image') { 
 		let photoItem = `
 			<li class="image-block">
-				<picture>
-					${ block.image.thumb ? `<source media="(max-width: 428px)" srcset="${ block.image.thumb.url }">` : '' }
-					${ block.image.large ? `<source media="(max-width: 640px)" srcset="${ block.image.large.url }">` : '' }
-					<img src="${ block.image.original.url }" alt="Image from Are.na">
-				</picture>
+				<button class="image-button">
+				<img src="${block.image.original.url}" alt="Image from Are.na">
+				<h3 class="block-title">${block.title || ''}</h3>
+				</button>
+				<dialog>
+				<div>
+				<h3 class="block-title-style">${block.title || ''}</h3>
+				<img src="${block.image.original.url}" alt="Image in modal">
+				${block.description_html || ''}
+				</div>
+				<button class="close-button">×</button>
+      			</dialog>
 			</li>
 			`
 	channelBlocks.insertAdjacentHTML('beforeend', photoItem);
@@ -49,13 +56,14 @@
 	
 // Text!
 	} else if (block.class == 'Text') {
-		let textItem = 
-		`
+		let textItem = 	`
 			<li class="text-block">
 				<button class="text-block">
 					<blockquote>${block.content}</blockquote>
 					<h3 class="block-title">${block.title}</h3>
 				</button>
+				      <h3 class="block-title">${block.title || ''}</h3>
+
 			</li>
 		`
 		channelBlocks.insertAdjacentHTML('beforeend', textItem)
@@ -74,6 +82,8 @@
 					<li class="video-block">
 						<p><em>Video</em></p>
 						<video controls src="${ block.attachment.url }"></video>
+						      <h3 class="block-title">${block.title || ''}</h3>
+
 					</li>
 					`
 				channelBlocks.insertAdjacentHTML('beforeend', videoItem)
@@ -90,12 +100,14 @@
 					<li class="audio-block">
 						<p><em>Audio</em></p>
 						<audio controls src="${ block.attachment.url }"></audio>
+						      <h3 class="block-title">${block.title || ''}</h3>
+
 					</li>
 					`
 				channelBlocks.insertAdjacentHTML('beforeend', audioItem)
 				// More on audio: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio
 		
-	
+	}
 // Linked media…
 	}	else if (block.class == 'Media') {
 			let embed = block.embed.type
@@ -108,6 +120,8 @@
 					<li class="video-block">
 						<p><em>Linked Video</em></p>
 						${ block.embed.html }
+						      <h3 class="block-title">${block.title || ''}</h3>
+
 					</li>
 					`
 				channelBlocks.insertAdjacentHTML('beforeend', linkedVideoItem)
@@ -147,6 +161,8 @@
 			let channelUsers = document.querySelector('#channel-users') // Show them together
 			data.collaborators.forEach((collaborator) => renderUser(collaborator, channelUsers))
 			renderUser(data.user, channelUsers)
+			initInteraction();
+
 		})
 
 
@@ -197,3 +213,23 @@ showAllButton.onclick = () => {
 channelBlocks.querySelectorAll('li').forEach(li => li.classList.remove('hide'))
 console.log("Showing all items")
 }
+
+
+// add modal to learn more about the content
+let initInteraction = () => {
+let blocks = document.querySelectorAll('.image-block, .text-block, .video-block, .audio-block');
+  blocks.forEach((block) => {
+let openButton = block.querySelector('button');
+let dialog = block.querySelector('dialog');
+let closeButton = dialog.querySelector('.close-button');
+
+    openButton.onclick = () => dialog.showModal();
+    closeButton.onclick = () => dialog.close();
+
+    dialog.onclick = (e) => {
+      if (e.target === dialog) dialog.close();
+    };
+  });
+};
+
+

@@ -44,6 +44,10 @@ h2 {
 	padding-right: var(--padding);
 	font-family: var(--font-family-h2);
 }
+h3 {
+	padding-right: var(--padding);
+	font-family: var(--font-family-h3);
+}
 
 
 /* filter*/ 
@@ -130,6 +134,31 @@ span {
 	text-decoration: underline;
 }
 
+/* title */
+.block-title {
+	font-family: var(--font-family-h3);
+	font-size: calc(2*var(--base-size));
+	color: var(--color-primary);
+	margin-top: calc(.5*var(--base-size));
+}
+
+
+/* modal */
+dialog {
+	padding: 2rem;
+	border-radius: 24px;
+	border: 4px solid #565656;
+	max-width: 600px;
+	width: 50%;
+	color: var(--color-primary);
+	background-color: var(--background-color);
+	font-size: calc(2*var(--base-size));
+	font-family: var(--font-family-h3);
+}
+.close-button {
+  margin-top: 1rem;
+  cursor: pointer;
+}
 
 
 /* footer */
