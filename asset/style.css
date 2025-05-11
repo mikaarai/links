@@ -94,6 +94,7 @@ h2 {
 }
 
 
+
 /* content */
 #main {
 	block-size: 13px;
@@ -185,6 +186,30 @@ footer {
 	line-height: 150%;
 	color: var(--color-primary);
 	font-size: var(--base-size);
+}
+
+
+
+/* back to top */
+#back-to-top {
+	text-align: center;
+	position: fixed;
+	bottom: 2rem;
+	right: 2rem;
+	cursor: pointer;
+	display: none;
+	z-index: 1000;
+	padding: 0.5rem 1rem;
+	font-size: 1.5rem;
+	border: 4px solid #565656;
+	background-color: var(--background-color);
+	line-height: 130%;
+	font-family: var(--font-family-h2);
+	font-size: var(--base-size);
+}
+#back-to-top.show {
+	display: block;
+	opacity: 1;
 }
 
 
