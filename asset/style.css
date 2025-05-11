@@ -224,13 +224,39 @@ footer {
 
 /* header */
 body {
-	margin-left: calc(2*var(--padding));
+	margin-left: calc(3*var(--padding));
 	margin-top: var(--padding);
-
 }
 header {
 	padding-top: calc(5*var(--padding));
 	padding-bottom: calc(5*var(--padding));
+}
+#channel-title {
+	font-size: calc(8*var(--base-size));
+	line-height: 80%;
+	max-width: 50vw;
+}
+#channel-description {
+	font-size: calc(1.2*var(--base-size));
+	line-height: 150%;
+	max-width: 40vw;
+}
+#channel-link {
+	font-size: calc(1.4*var(--base-size));
+}
+
+
+
+/* filter*/ 
+h2 {
+	padding-top: calc(1.05*var(--padding));
+	padding-bottom: calc(1.05*var(--padding));
+}
+.filter {
+	font-size: calc(1.4*var(--base-size));
+	padding-top: calc(1.5*var(--padding));
+	padding-bottom: calc(5*var(--padding));
+	gap: 4rem;
 }
 
 
@@ -241,17 +267,6 @@ header {
 	grid-template-columns: repeat(4, 1fr); 
 	gap: 2rem 1rem;
 	place-items: center;
-	margin: 0;
-	padding: 0;
-}
-#channel-blocks li {
-	width: calc(1.4*var(--width));
-	height: calc(1.4*var(--height)); 
-	border-radius: 130px 130px 0 0;
-}
-p {
-	padding-left: 0;
-	padding-top: calc(0.5*var(--padding));
 }
 
 
