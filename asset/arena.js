@@ -181,12 +181,10 @@
 						item.classList.add('hide'); 
 					}
 				}
-			});
+			})
 		
-			// to check if the correct class is applied. it is!
-			console.log("Applied class:", channelBlocks.classList);
-		}
-		
+	console.log("Applied class:", channelBlocks.classList);
+}
 		
 // assigning event listeners
 showVideoButton.onclick = () => showCategory('show-video')
