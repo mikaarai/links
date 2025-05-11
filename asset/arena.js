@@ -159,7 +159,6 @@
 	fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-store' })
 		.then((response) => response.json()) // Return it as JSON data
 		.then((data) => { // Do stuff with the data
-			console.log(data) // Always good to check your response!
 			placeChannelInfo(data) // Pass the data to the first function
 	
 			// Loop through the `contents` array (list), backwards. Are.na returns them in reverse!
@@ -187,6 +186,15 @@
 		let showAudioButton = document.querySelector('#show-audio-button');
 		let showAllButton = document.querySelector('#show-all-button');
 		
+		// show underline when active
+		let filterButtons = [
+  			showVideoButton,
+  			showImageButton,
+  			showTextButton,
+  			showAudioButton,
+  			showAllButton
+			]
+
 		function showCategory(categoryClass) {
 			// remove all possible filter classes
 			channelBlocks.classList.remove('show-video', 'show-image', 'show-text', 'show-audio', 'show-all');
@@ -209,6 +217,12 @@
 					}
 				}
 			})
+
+// remove active class from all filter buttons
+filterButtons.forEach(btn => btn.classList.remove('active'))
+
+// add active class to the selected button
+document.querySelector(`#show-${categoryClass.replace('show-', '')}-button`).classList.add('active')
 		
 	console.log("Applied class:", channelBlocks.classList);
 }
@@ -220,10 +234,7 @@ showTextButton.onclick = () => showCategory('show-text')
 showAudioButton.onclick = () => showCategory('show-audio')
 
 // showing all button displays everything
-showAllButton.onclick = () => {
-channelBlocks.querySelectorAll('li').forEach(li => li.classList.remove('hide'))
-console.log("Showing all items")
-}
+showAllButton.onclick = () => showCategory('show-all')
 
 
 // add modal to learn more about the content

@@ -72,8 +72,12 @@ h2 {
 	padding-bottom: var(--base-size);
 	font-size: calc(1.2*var(--base-size));
 	font-family: var(--font-family-h2);
+	cursor: pointer;
 }
-
+.filter a.active {
+	text-decoration: underline;
+	text-underline-offset: 0.5em;
+}
 
 
 /* content */
@@ -188,17 +192,6 @@ body {
 header {
 	padding-top: calc(5*var(--padding));
 	padding-bottom: calc(5*var(--padding));
-}
-
-
-
-/* filter */
-li {
-align-content: center;
-}	
-ul {
-padding-top: calc(1.5*var(--padding-top));
-padding-bottom: calc(10*var(--padding-bottom));
 }
 
 
