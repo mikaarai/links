@@ -26,12 +26,16 @@ body {
 	padding: var(--padding);
 }
 header {
-	padding-bottom: calc(5*var(--padding));
+	padding-bottom: calc(3*var(--padding));
 	padding-top: calc(3*var(--padding));
 }
-#channel-title {
+header img {	
 	padding-top: calc(1.5*var(--padding));
 	padding-bottom: calc(1.5*var(--padding));
+}
+#channel-title {
+	padding-bottom: calc(1.5*var(--padding));
+	padding-top: calc(1.5*var(--padding));
 	font-size: calc(3*var(--base-size));
 	font-family: var(--font-family-h1);
 	color: var(--color-primary);
@@ -49,6 +53,10 @@ header {
 	color: var(--color-primary);
 	font-size: calc(1.2*var(--base-size));
 }
+
+
+
+/* filter*/ 
 h2 {
 	font-family: var(--font-family-h3);
 	font-size: calc(2.5*var(--base-size));
@@ -56,16 +64,6 @@ h2 {
 	border-top: 1px white solid;
 	text-align: center;
 }
-h3 {
-	padding-right: var(--padding);
-	font-family: var(--font-family-h3);
-	font-size: calc(2*var(--base-size));
-	padding-bottom: var(--base-size);
-}
-
-
-
-/* filter*/ 
 .filter {
 	display: flex;
 	justify-content: center;
@@ -112,12 +110,6 @@ h3 {
 	border-radius: 100px 100px 0 0;
 	margin-right: 20px;
 } 
-/* p {
-	padding-left: var(--padding);
-	padding-top: var(--padding);
-	font-size: calc(1.5*var(--base-size));
-	font-family: var(--font-family-h2);
-} */
 /* hide the unselected category */
 .hide {
 	visibility: hidden;
@@ -135,6 +127,7 @@ h3 {
 }
 
 
+
 /* modal */
 dialog {
 	padding: 2rem;
@@ -149,14 +142,26 @@ dialog {
 	font-family: var(--font-family-h3);
 }
 .close-button {
-  margin-top: 1rem;
-  cursor: pointer;
+	margin-top: 1rem;
+	cursor: pointer;
 }
+h3 {
+	padding-right: var(--padding);
+	font-family: var(--font-family-h3);
+	font-size: calc(2*var(--base-size));
+	padding-bottom: var(--base-size);
+}
+dialog p {
+	padding-top: var(--padding);
+	font-size: calc(1*var(--base-size));
+	font-family: var(--font-family-h2);
+}
+
 
 
 /* footer */
 footer {
-	padding-top: var(--padding);
+	padding-top: calc(5*var(--padding));
 	padding-bottom: var(--padding); 
 	font-family: var(--font-family-h2);
 	line-height: 150%;
