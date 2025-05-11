@@ -1,7 +1,6 @@
 :root {
 	/* size */
 	--base-size: 1rem;
-	--base-size-cap: 0.5rem;
 
 	/* color */
 	--background-color: black; 
@@ -24,38 +23,38 @@
 body {
 	color: var(--color-primary);
 	background-color: var(--background-color);
-	color: var(--font-color-primary);
 	padding: var(--padding);
-	margin-left: calc(2*var(--padding));
 }
 header {
-	padding-left: var(--padding);
-	padding-top: calc(5*var(--padding));
 	padding-bottom: calc(5*var(--padding));
-	/* align-items: center; */
-	/* text-align: center; */
+	padding-top: calc(3*var(--padding));
 }
 #channel-title {
-	padding-top: calc(3*var(--padding));
-	padding-bottom: calc(3*var(--padding));
-	font-size: calc(7*var(--base-size));
+	padding-top: calc(1.5*var(--padding));
+	padding-bottom: calc(1.5*var(--padding));
+	font-size: calc(3*var(--base-size));
 	font-family: var(--font-family-h1);
 	color: var(--color-primary);
-	max-width: 50vw; 
-
+	line-height: 120%;
 }
 #channel-description {
-	padding-right: var(--padding);
 	font-family: var(--font-family-h2);
 	color: var(--color-primary);
-	max-width: 45vw; 
+	font-size: calc(1.1*var(--base-size));
+	line-height: 150%;
 }
 #channel-link {
 	padding-right: var(--padding);
 	font-family: var(--font-family-h2);
 	color: var(--color-primary);
-	font-size: calc(1.5*var(--base-size));
-
+	font-size: calc(1.2*var(--base-size));
+}
+h2 {
+	font-family: var(--font-family-h3);
+	font-size: calc(2.5*var(--base-size));
+	border-bottom: 1px white solid;
+	border-top: 1px white solid;
+	text-align: center;
 }
 h3 {
 	padding-right: var(--padding);
@@ -65,14 +64,17 @@ h3 {
 }
 
 
+
 /* filter*/ 
 .filter {
-	align-content: center;
-}
-filter li {
-	font-size: var(--base-size);
+	display: flex;
+	justify-content: center;
+	gap: calc(1.5*var(--padding));
+	padding-top: var(--base-size);
+	padding-bottom: var(--base-size);
+	font-size: calc(1.2*var(--base-size));
 	font-family: var(--font-family-h2);
-}	
+}
 
 
 
@@ -86,8 +88,7 @@ filter li {
 	grid-template-columns: repeat(2, 1fr); 
 	padding-top: 1.5rem;
 	align-items: center;
-	gap: 2rem 0.5rem;
-	padding-left: var(--padding);
+	gap: 2rem 1rem;
 }
 .arch-button {
 	width: 170px; 
@@ -101,35 +102,22 @@ filter li {
 	opacity: 1;
 	transition: opacity 3s ease-in-out; 
 	cursor: pointer;
-
 }	
-.text-block {
-	line-height: 150%;
-	padding-top: calc(2.5*var(--padding));
-	padding-left: calc(2*var(--padding));
-	font-family: var(--font-family-h3);
-}
-
 #channel-blocks img {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
 }
-#channel-count {
-	text-align: center;
-	max-height: 400px;
-	object-fit: cover;
-} 
 #channel-users {	
 	border-radius: 100px 100px 0 0;
 	margin-right: 20px;
 } 
-p {
+/* p {
 	padding-left: var(--padding);
 	padding-top: var(--padding);
 	font-size: calc(1.5*var(--base-size));
 	font-family: var(--font-family-h2);
-}
+} */
 /* hide the unselected category */
 .hide {
 	visibility: hidden;
@@ -145,10 +133,6 @@ p {
 	visibility: visible;
 	opacity: 1;
 }
-/* link */
-span {
-	text-decoration: underline;
-}
 
 
 /* modal */
@@ -158,7 +142,7 @@ dialog {
 	border: 4px solid #565656;
 	max-width: 600px;
 	max-height: 800px;
-	width: 50%;
+	width: 70%;
 	color: var(--color-primary);
 	background-color: var(--background-color);
 	font-size: calc(2*var(--base-size));
@@ -174,9 +158,10 @@ dialog {
 footer {
 	padding-top: var(--padding);
 	padding-bottom: var(--padding); 
-	font-family: var(--font-family-h3);
+	font-family: var(--font-family-h2);
 	line-height: 150%;
-	text-align: center;
+	color: var(--color-primary);
+	font-size: var(--base-size);
 }
 
 
@@ -188,33 +173,16 @@ footer {
 }
 
 
+
 /* header */
-html, body {
-	margin-left: calc(1.5*var(--padding));
+body {
+	margin-left: calc(2*var(--padding));
 	margin-top: var(--padding);
 
 }
 header {
-	padding-top: var(--padding);
-	padding-bottom: calc(2*var(--padding));
-}
-h1 {
-	font-size: calc(10*var(--base-size));
-	line-height: 100%;
-	padding-top: calc(0.5*var(--padding));
-}
-h2 {
-	font-size: calc(1.2*var(--base-size));
-}
-
-
-
-/* intro vid */
-.intro { 
-	padding-bottom: calc(4*var(--padding));	
-}
-img.gif {
-	height: 650px;
+	padding-top: calc(5*var(--padding));
+	padding-bottom: calc(5*var(--padding));
 }
 
 

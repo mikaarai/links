@@ -15,7 +15,6 @@
 // Target some elements in your HTML:
 	let channelTitle = document.querySelector('#channel-title')
 	let channelDescription = document.querySelector('#channel-description')
-	let channelCount = document.querySelector('#channel-count')
 	let channelLink = document.querySelector('#channel-link')
 	
 	
@@ -26,7 +25,6 @@
 	
  // Converts Markdown → HTML
 	channelDescription.innerHTML = window.markdownit().render(data.metadata.description || '')
-	channelCount.innerHTML = data.length
 	}
 
 // Then our big function for specific-block-type rendering:
@@ -61,7 +59,6 @@
 			<li class="text-block">
 				<button class="arch-button">
 					<blockquote>${block.content}</blockquote>
-					<h3 class="block-title">${block.title}</h3>
 				</button>
 				<dialog>
 				<div>
@@ -88,6 +85,8 @@
 				let videoItem =
 					`
 					<li class="video-block">
+									<button class="arch-button">
+
 						<p><em>Video</em></p>
 						<video controls src="${ block.attachment.url }"></video>
 						      <h3 class="block-title">${block.title || ''}</h3>
@@ -106,6 +105,8 @@
 				let audioItem =
 					`
 					<li class="audio-block">
+									<button class="arch-button">
+
 						<p><em>Audio</em></p>
 						<audio controls src="${ block.attachment.url }"></audio>
 						      <h3 class="block-title">${block.title || ''}</h3>
@@ -125,7 +126,9 @@
 				// …still up to you, but here’s an example `iframe` element:
 				let linkedVideoItem =
 					`
-					<li class="video-block">
+					<li class="video-block">		
+							<button class="arch-button">
+
 						<p><em>Linked Video</em></p>
 						${ block.embed.html }
 						      <h3 class="block-title">${block.title || ''}</h3>
