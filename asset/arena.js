@@ -8,49 +8,48 @@
 // connecting arena page
 	let channelSlug = 'philosophers-cave' 
 
-	// First, let’s lay out some *functions*, starting with our basic metadata:
-	// Let = function that allows you to command something or create a new fresh variable
-	// Connecting with your html eg. ‘#channel-title’
+// First, let’s lay out some *functions*, starting with our basic metadata:
+// Let = function that allows you to command something or create a new fresh variable
+// Connecting with your html eg. ‘#channel-title’
 	let placeChannelInfo = (data) => {
-		// Target some elements in your HTML:
-		let channelTitle = document.querySelector('#channel-title')
-		let channelDescription = document.querySelector('#channel-description')
-		let channelCount = document.querySelector('#channel-count')
+// Target some elements in your HTML:
+	let channelTitle = document.querySelector('#channel-title')
+	let channelDescription = document.querySelector('#channel-description')
+	let channelCount = document.querySelector('#channel-count')
 
-		// Then set their content/attributes to our data:
-		// innerHTML = assigning task or changing the text like i want this to be this (i want channelTitle to be data.title)
-		channelTitle.innerHTML = data.title
-		// channelDescription.innerHTML = window.markdownit().render(data.metadata.description) // Converts Markdown → HTML
-		channelCount.innerHTML = data.length
+// Then set their content/attributes to our data:
+// innerHTML = assigning task or changing the text like i want this to be this (i want channelTitle to be data.title)
+	channelTitle.innerHTML = data.title
+// channelDescription.innerHTML = window.markdownit().render(data.metadata.description) // Converts Markdown → HTML
+	channelCount.innerHTML = data.length
 	}
 
-	// Then our big function for specific-block-type rendering:
+// Then our big function for specific-block-type rendering:
 	let renderBlock = (block) => {
-		// To start, a shared `ul` where we’ll insert all our blocks
-		let channelBlocks = document.querySelector('#channel-blocks')
-		let imageBlocks = document.querySelector('#image-blocks')
-		let textBlocks = document.querySelector('#text-blocks')
-		let videoBlocks = document.querySelector('#video-blocks')
-	}
+// To start, a shared `ul` where we’ll insert all our blocks
+	let channelBlocks = document.querySelector('#channel-blocks')
+	let imageBlocks = document.querySelector('#image-blocks')
+	let textBlocks = document.querySelector('#text-blocks')
+	let videoBlocks = document.querySelector('#video-blocks')
+	
 
-		// Images!
-		if (block.class == 'Image') { 
-			let photoItem = `
-				<li class="image-block">
-					<picture>
-						${ block.image.thumb ? `<source media="(max-width: 428px)" srcset="${ block.image.thumb.url }">` : '' }
-						${ block.image.large ? `<source media="(max-width: 640px)" srcset="${ block.image.large.url }">` : '' }
-						<img src="${ block.image.original.url }" alt="Image from Are.na">
-					</picture>
-				</li>
+// Images!
+	if (block.class == 'Image') { 
+		let photoItem = `
+			<li class="image-block">
+				<picture>
+					${ block.image.thumb ? `<source media="(max-width: 428px)" srcset="${ block.image.thumb.url }">` : '' }
+					${ block.image.large ? `<source media="(max-width: 640px)" srcset="${ block.image.large.url }">` : '' }
+					<img src="${ block.image.original.url }" alt="Image from Are.na">
+				</picture>
+			</li>
 			`
-			channelBlocks.insertAdjacentHTML('beforeend', photoItem);
-		}
+	channelBlocks.insertAdjacentHTML('beforeend', photoItem);
 		
 	
-		// Text!
-		else if (block.class == 'Text') {
-			let textItem = 
+// Text!
+	} else if (block.class == 'Text') {
+		let textItem = 
 		`
 			<li class="text-block">
 				<button class="text-block">
@@ -60,10 +59,11 @@
 			</li>
 		`
 		channelBlocks.insertAdjacentHTML('beforeend', textItem)
-	}
 	
-		// Uploaded (not linked) media…
-		else if (block.class == 'Attachment') {
+		
+
+// Uploaded (not linked) media…
+	}	else if (block.class == 'Attachment') {
 			let attachment = block.attachment.content_type // Save us some repetition
 	
 			// Uploaded videos!
@@ -79,11 +79,11 @@
 				channelBlocks.insertAdjacentHTML('beforeend', videoItem)
 				// More on video, like the `autoplay` attribute:
 				// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video
-			}
-		}
+			
 	
-			// Uploaded audio!
-			else if (attachment.includes('audio')) {
+	
+// Uploaded audio!
+	}	else if (attachment.includes('audio')) {
 				// …still up to you, but here’s an `audio` element:
 				let audioItem =
 					`
@@ -94,11 +94,10 @@
 					`
 				channelBlocks.insertAdjacentHTML('beforeend', audioItem)
 				// More on audio: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio
-			}
 		
 	
-		// Linked media…
-		else if (block.class == 'Media') {
+// Linked media…
+	}	else if (block.class == 'Media') {
 			let embed = block.embed.type
 	
 			// Linked video!
@@ -115,10 +114,10 @@
 				// More on iframe: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe
 			}
 		}
-				
+	}	
 	
 	
-	// It‘s always good to credit your work:
+// It‘s always good to credit your work:
 	let renderUser = (user, container) => { // You can have multiple arguments for a function!
 		let userAddress =
 			`
@@ -131,7 +130,7 @@
 		// container.insertAdjacentHTML('beforeend', userAddress)
 	}
 		
-	// API stuff - Now that we have said what we can do, go get the data:
+// API stuff - Now that we have said what we can do, go get the data:
 	fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-store' })
 		.then((response) => response.json()) // Return it as JSON data
 		.then((data) => { // Do stuff with the data
@@ -189,20 +188,14 @@
 		}
 		
 		
-		// assigning event listeners
-		showVideoButton.onclick = () => showCategory('video');
-		showImageButton.onclick = () => showCategory('image');
-		showTextButton.onclick = () => showCategory('text');
-		showLinkButton.onclick = () => showCategory('link');
-		showAudioButton.onclick = () => showCategory('audio');
-		
-		// showing all button displays everything
-		showAllButton.onclick = () => {
-			channelBlocks.querySelectorAll('li').forEach(li => {
-				li.classList.remove('hide'); // remove or hide class from all items
-			});
-			console.log("Showing all items");
-		};
+// assigning event listeners
+showVideoButton.onclick = () => showCategory('show-video')
+showImageButton.onclick = () => showCategory('show-image')
+showTextButton.onclick = () => showCategory('show-text')
+showAudioButton.onclick = () => showCategory('show-audio')
 
-
-
+// showing all button displays everything
+showAllButton.onclick = () => {
+channelBlocks.querySelectorAll('li').forEach(li => li.classList.remove('hide'))
+console.log("Showing all items")
+}
