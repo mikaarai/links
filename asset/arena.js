@@ -16,27 +16,25 @@
 		let channelTitle = document.querySelector('#channel-title')
 		let channelDescription = document.querySelector('#channel-description')
 		let channelCount = document.querySelector('#channel-count')
-		let channelLink = document.querySelector('#channel-link')
 
 		// Then set their content/attributes to our data:
 		// innerHTML = assigning task or changing the text like i want this to be this (i want channelTitle to be data.title)
 		channelTitle.innerHTML = data.title
 		// channelDescription.innerHTML = window.markdownit().render(data.metadata.description) // Converts Markdown → HTML
 		channelCount.innerHTML = data.length
-		channelLink.href = `https://www.are.na/channel/${channelSlug}`
 	}
 
 	// Then our big function for specific-block-type rendering:
 	let renderBlock = (block) => {
 		// To start, a shared `ul` where we’ll insert all our blocks
 		let channelBlocks = document.querySelector('#channel-blocks')
-		// let imageBlocks = document.querySelector('#image-blocks')
-		// let textBlocks = document.querySelector('#text-blocks')
-		// let videoBlocks = document.querySelector('#video-blocks')
-
+		let imageBlocks = document.querySelector('#image-blocks')
+		let textBlocks = document.querySelector('#text-blocks')
+		let videoBlocks = document.querySelector('#video-blocks')
+	}
 
 		// Images!
-		else if (block.class == 'Image') { 
+		if (block.class == 'Image') { 
 			let photoItem = `
 				<li class="image-block">
 					<picture>
@@ -82,7 +80,7 @@
 				// More on video, like the `autoplay` attribute:
 				// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video
 			}
-	
+		}
 	
 			// Uploaded audio!
 			else if (attachment.includes('audio')) {
@@ -97,7 +95,7 @@
 				channelBlocks.insertAdjacentHTML('beforeend', audioItem)
 				// More on audio: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio
 			}
-		}
+		
 	
 		// Linked media…
 		else if (block.class == 'Media') {
@@ -116,13 +114,8 @@
 				channelBlocks.insertAdjacentHTML('beforeend', linkedVideoItem)
 				// More on iframe: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe
 			}
-	
-			// Linked audio!
-			else if (embed.includes('rich')) {
-				// …up to you!
-			}
 		}
-}
+				
 	
 	
 	// It‘s always good to credit your work:
@@ -165,7 +158,6 @@
 		let showVideoButton = document.querySelector('#show-video-button');
 		let showImageButton = document.querySelector('#show-image-button');
 		let showTextButton = document.querySelector('#show-text-button');
-		let showLinkButton = document.querySelector('#show-link-button');
 		let showAudioButton = document.querySelector('#show-audio-button');
 		let showAllButton = document.querySelector('#show-all-button');
 		
