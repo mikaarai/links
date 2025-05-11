@@ -201,7 +201,12 @@
 		
 			// add the correct category class
 			channelBlocks.classList.add(categoryClass);
-		
+
+			// provide loading feedback that it switch between filters
+			channelBlocks.classList.remove('animate-in'); 
+			void channelBlocks.offsetWidth; 
+			channelBlocks.classList.add('animate-in');
+
 			// get all the list items in the channel blocks
 			const allItems = channelBlocks.querySelectorAll('li');
 		
