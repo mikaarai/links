@@ -223,22 +223,35 @@ footer {
 
 
 /* header */
-body {
-	margin-left: calc(3*var(--padding));
-	margin-top: var(--padding);
-}
 header {
-	padding-top: calc(5*var(--padding));
-	padding-bottom: calc(5*var(--padding));
+	padding-top: calc(.5*var(--padding));
+	padding-bottom: calc(2*var(--padding));
+}
+.header-container {
+	margin-right: calc(8*var(--padding));
+	margin-left: calc(8*var(--padding));
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 2rem;
+}
+.header-text {
+	flex: 1;
+}
+header img {
+	max-width: 1000px;
+	height: auto;
+	margin-top: calc(4*var(--padding));
 }
 #channel-title {
 	font-size: calc(8*var(--base-size));
 	line-height: 80%;
 	max-width: 50vw;
+	padding-bottom: calc(2*var(--padding));
 }
 #channel-description {
 	font-size: calc(1.2*var(--base-size));
-	line-height: 150%;
+	line-height: 170%;
 	max-width: 40vw;
 }
 #channel-link {
@@ -254,7 +267,7 @@ h2 {
 }
 .filter {
 	font-size: calc(1.4*var(--base-size));
-	padding-top: calc(1.5*var(--padding));
+	padding-top: calc(3*var(--padding));
 	padding-bottom: calc(5*var(--padding));
 	gap: 4rem;
 }
@@ -265,8 +278,15 @@ h2 {
 #channel-blocks {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr); 
-	gap: 2rem 1rem;
+	gap: 4rem .5rem;
 	place-items: center;
+	margin-left: calc(20*var(--padding));
+	margin-right: calc(20*var(--padding));
+}
+.arch-button {
+	width: calc(1.5*var(--width)); 
+	height: calc(1.5*var(--height)); 
+	border-radius: 150px 150px 0 0;
 }
 
 
@@ -274,5 +294,7 @@ h2 {
 /* footer */
 footer {
 	padding-bottom: calc(2*var(--padding));
+	padding-top: calc(10*var(--padding));
+	margin-left: calc(8*var(--padding));
 }
 }
